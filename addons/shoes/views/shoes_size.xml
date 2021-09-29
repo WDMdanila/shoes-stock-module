@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="shoes_size_tree">
+        <field name="name">shoes.size.tree</field>
+        <field name="model">shoes.size</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree string="Sizes list" editable="top">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="shoes_size_form" model="ir.ui.view">
+        <field name="name">shoes.size.form</field>
+        <field name="model">shoes.size</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Size">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

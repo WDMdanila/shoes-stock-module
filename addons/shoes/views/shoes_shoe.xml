@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="shoes_shoe_form" model="ir.ui.view">
+        <field name="name">shoes.shoe.form</field>
+        <field name="model">shoes.shoe</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Shoe">
+                <sheet>
+                    <group>
+                        <field name="size_ids" widget="many2many_tags"/>
+                        <field name="model_ids" widget="many2many_tags"/>
+                        <field name="brand_id"/>
+                        <field name="place_id"/>
+                    </group>
+                    <group>
+                        <field name="status_id"/>
+                    </group>
+                    <notebook>
+                        <page id="notes_tab" string="Notes">
+                            <field name="notes"/>
+                        </page>
+                        <page id="links_tab" string="Links">
+                            <field name="links" widget="html"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="shoes_shoe_tree">
+        <field name="name">shoes.shoe.tree</field>
+        <field name="model">shoes.shoe</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree string="Shoes list">
+                <field name="size_ids" widget="many2many_tags"/>
+                <field name="model_ids" widget="many2many_tags"/>
+                <field name="brand_id"/>
+                <field name="place_id"/>
+                <field name="status_id"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="shoes_status_tree">
+        <field name="name">shoes.status.tree</field>
+        <field name="model">shoes.status</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree string="Statuses list" editable="top">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="shoes_status_form" model="ir.ui.view">
+        <field name="name">shoes.status.form</field>
+        <field name="model">shoes.status</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Status">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

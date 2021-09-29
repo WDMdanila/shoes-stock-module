@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.actions.act_window" id="action_list_shoes">
+        <field name="name">Shoes</field>
+        <field name="res_model">shoes.shoe</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_list_sizes">
+        <field name="name">Sizes</field>
+        <field name="res_model">shoes.size</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_list_brands">
+        <field name="name">Brands</field>
+        <field name="res_model">shoes.brand</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_list_models">
+        <field name="name">Models</field>
+        <field name="res_model">shoes.model</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_list_places">
+        <field name="name">Places</field>
+        <field name="res_model">shoes.place</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_list_statuses">
+        <field name="name">Statuses</field>
+        <field name="res_model">shoes.status</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="menu_shoes_shoe" name="Shoes" sequence="10"
+              action="action_list_shoes"/>
+
+    <menuitem id="menu_shoes_brand" name="Brands" parent="menu_shoes_shoe" sequence="11"
+              action="action_list_brands"/>
+
+    <menuitem id="menu_shoes_model" parent="menu_shoes_shoe" name="Models" sequence="12"
+              action="action_list_models"/>
+
+    <menuitem id="menu_shoes_place" parent="menu_shoes_shoe" name="Places" sequence="13"
+              action="action_list_places"/>
+
+    <menuitem id="menu_shoes_size" parent="menu_shoes_shoe" name="Sizes" sequence="14"
+              action="action_list_sizes"/>
+
+    <menuitem id="menu_shoes_status" parent="menu_shoes_shoe" name="Statuses" sequence="15"
+              action="action_list_statuses"/>
+</odoo>
