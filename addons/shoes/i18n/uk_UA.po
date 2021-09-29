@@ -18,12 +18,12 @@ msgstr ""
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Дія потрібна"
 
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Кількість додатків"
 
 #. module: shoes
 #: code:addons/shoes/models/shoes_brand.py:0
