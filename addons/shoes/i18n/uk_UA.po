@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210903\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-29 05:37+0000\n"
-"PO-Revision-Date: 2021-09-29 05:37+0000\n"
+"POT-Creation-Date: 2021-10-10 16:51+0000\n"
+"PO-Revision-Date: 2021-10-10 16:51+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -49,6 +49,7 @@ msgstr "Список брендів"
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_brand__create_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_model__create_uid
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type__create_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_place__create_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__create_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_size__create_uid
@@ -59,6 +60,7 @@ msgstr "Хто створив"
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_brand__create_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_model__create_date
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type__create_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_place__create_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__create_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_size__create_date
@@ -69,6 +71,7 @@ msgstr "Коли створено"
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_brand__display_name
 #: model:ir.model.fields,field_description:shoes.field_shoes_model__display_name
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type__display_name
 #: model:ir.model.fields,field_description:shoes.field_shoes_place__display_name
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__display_name
 #: model:ir.model.fields,field_description:shoes.field_shoes_size__display_name
@@ -94,6 +97,7 @@ msgstr "Слідкують (партнери)"
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_brand__id
 #: model:ir.model.fields,field_description:shoes.field_shoes_model__id
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type__id
 #: model:ir.model.fields,field_description:shoes.field_shoes_place__id
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__id
 #: model:ir.model.fields,field_description:shoes.field_shoes_size__id
@@ -120,6 +124,7 @@ msgstr "Є підписником"
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_brand____last_update
 #: model:ir.model.fields,field_description:shoes.field_shoes_model____last_update
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type____last_update
 #: model:ir.model.fields,field_description:shoes.field_shoes_place____last_update
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe____last_update
 #: model:ir.model.fields,field_description:shoes.field_shoes_size____last_update
@@ -130,6 +135,7 @@ msgstr "Остання модифікація"
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_brand__write_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_model__write_uid
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type__write_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_place__write_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__write_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_size__write_uid
@@ -140,12 +146,20 @@ msgstr "Модифікацію зробили"
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_brand__write_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_model__write_date
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type__write_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_place__write_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__write_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_size__write_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_status__write_date
 msgid "Last Updated on"
 msgstr "Дата оновлення"
+
+#. module: shoes
+#: code:addons/shoes/models/shoes_shoe.py:0
+#: model:ir.model.fields,field_description:shoes.field_shoes_shoe__length
+#, python-format
+msgid "Length"
+msgstr "Довжина устілки"
 
 #. module: shoes
 #: code:addons/shoes/models/shoes_shoe.py:0
@@ -168,7 +182,7 @@ msgstr "Помилка при доставці повідомлення"
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__message_ids
 msgid "Messages"
-msgstr "Повідомлення"
+msgstr ""
 
 #. module: shoes
 #: code:addons/shoes/models/shoes_model.py:0
@@ -177,6 +191,25 @@ msgstr "Повідомлення"
 #, python-format
 msgid "Model"
 msgstr "Модель"
+
+#. module: shoes
+#: model_terms:ir.ui.view,arch_db:shoes.shoes_model_type_form
+msgid "Model Type"
+msgstr "Вид моделі"
+
+#. module: shoes
+#: code:addons/shoes/models/shoes_shoe.py:0
+#: model:ir.actions.act_window,name:shoes.action_list_model_types
+#: model:ir.model.fields,field_description:shoes.field_shoes_shoe__model_type_ids
+#: model:ir.ui.menu,name:shoes.menu_shoes_model_type
+#, python-format
+msgid "Model Types"
+msgstr "Вид моделі"
+
+#. module: shoes
+#: model_terms:ir.ui.view,arch_db:shoes.shoes_model_type_tree
+msgid "Model Types list"
+msgstr "Види моделей"
 
 #. module: shoes
 #: code:addons/shoes/models/shoes_shoe.py:0
@@ -223,7 +256,7 @@ msgstr "Кількість повідомлень з помилкою доста
 #. module: shoes
 #: model:ir.model.fields,help:shoes.field_shoes_shoe__message_unread_counter
 msgid "Number of unread messages"
-msgstr "Кількість непрочитаних повідомлень
+msgstr "Кількість непрочитаних повідомлень"
 
 #. module: shoes
 #: code:addons/shoes/models/shoes_place.py:0
@@ -233,18 +266,18 @@ msgstr "Кількість непрочитаних повідомлень
 #: model_terms:ir.ui.view,arch_db:shoes.shoes_place_form
 #, python-format
 msgid "Place"
-msgstr "Місце
+msgstr "Місце"
 
 #. module: shoes
 #: model:ir.actions.act_window,name:shoes.action_list_places
 #: model:ir.ui.menu,name:shoes.menu_shoes_place
 msgid "Places"
-msgstr "Місця
+msgstr "Місця"
 
 #. module: shoes
 #: model_terms:ir.ui.view,arch_db:shoes.shoes_place_tree
 msgid "Places list"
-msgstr "Список місць
+msgstr "Список місць"
 
 #. module: shoes
 #: model_terms:ir.ui.view,arch_db:shoes.shoes_shoe_form
@@ -313,6 +346,13 @@ msgid "Statuses list"
 msgstr "Список статусів"
 
 #. module: shoes
+#: code:addons/shoes/models/shoes_model_type.py:0
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type__name
+#, python-format
+msgid "Type"
+msgstr "Вид моделі"
+
+#. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__message_unread
 msgid "Unread Messages"
 msgstr "Непрочитані повідомлення"
@@ -331,6 +371,11 @@ msgstr "shoes.brand"
 #: model:ir.model,name:shoes.model_shoes_model
 msgid "shoes.model"
 msgstr "shoes.model"
+
+#. module: shoes
+#: model:ir.model,name:shoes.model_shoes_model_type
+msgid "shoes.model.type"
+msgstr "shoes.model.type"
 
 #. module: shoes
 #: model:ir.model,name:shoes.model_shoes_place
