@@ -5,3 +5,4 @@ access_shoes_size,access.shoes.size,model_shoes_size,base.group_user,1,1,1,1
 access_shoes_model,access.shoes.model,model_shoes_model,base.group_user,1,1,1,1
 access_shoes_place,access.shoes.place,model_shoes_place,base.group_user,1,1,1,1
 access_shoes_status,access.shoes.status,model_shoes_status,base.group_user,1,1,1,1
+access_shoes_model_type,access.shoes.model.type,model_shoes_model_type,base.group_user,1,1,1,1

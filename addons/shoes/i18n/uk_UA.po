@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20210903\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-29 05:37+0000\n"
-"PO-Revision-Date: 2021-09-29 05:37+0000\n"
+"POT-Creation-Date: 2021-10-10 16:48+0000\n"
+"PO-Revision-Date: 2021-10-10 16:48+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -49,6 +49,7 @@ msgstr ""
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_brand__create_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_model__create_uid
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type__create_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_place__create_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__create_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_size__create_uid
@@ -59,6 +60,7 @@ msgstr ""
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_brand__create_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_model__create_date
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type__create_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_place__create_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__create_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_size__create_date
@@ -69,6 +71,7 @@ msgstr ""
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_brand__display_name
 #: model:ir.model.fields,field_description:shoes.field_shoes_model__display_name
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type__display_name
 #: model:ir.model.fields,field_description:shoes.field_shoes_place__display_name
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__display_name
 #: model:ir.model.fields,field_description:shoes.field_shoes_size__display_name
@@ -94,6 +97,7 @@ msgstr ""
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_brand__id
 #: model:ir.model.fields,field_description:shoes.field_shoes_model__id
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type__id
 #: model:ir.model.fields,field_description:shoes.field_shoes_place__id
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__id
 #: model:ir.model.fields,field_description:shoes.field_shoes_size__id
@@ -120,6 +124,7 @@ msgstr ""
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_brand____last_update
 #: model:ir.model.fields,field_description:shoes.field_shoes_model____last_update
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type____last_update
 #: model:ir.model.fields,field_description:shoes.field_shoes_place____last_update
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe____last_update
 #: model:ir.model.fields,field_description:shoes.field_shoes_size____last_update
@@ -130,6 +135,7 @@ msgstr ""
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_brand__write_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_model__write_uid
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type__write_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_place__write_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__write_uid
 #: model:ir.model.fields,field_description:shoes.field_shoes_size__write_uid
@@ -140,11 +146,19 @@ msgstr ""
 #. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_brand__write_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_model__write_date
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type__write_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_place__write_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__write_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_size__write_date
 #: model:ir.model.fields,field_description:shoes.field_shoes_status__write_date
 msgid "Last Updated on"
+msgstr ""
+
+#. module: shoes
+#: code:addons/shoes/models/shoes_shoe.py:0
+#: model:ir.model.fields,field_description:shoes.field_shoes_shoe__length
+#, python-format
+msgid "Length"
 msgstr ""
 
 #. module: shoes
@@ -176,6 +190,25 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:shoes.shoes_model_form
 #, python-format
 msgid "Model"
+msgstr ""
+
+#. module: shoes
+#: model_terms:ir.ui.view,arch_db:shoes.shoes_model_type_form
+msgid "Model Type"
+msgstr ""
+
+#. module: shoes
+#: code:addons/shoes/models/shoes_shoe.py:0
+#: model:ir.actions.act_window,name:shoes.action_list_model_types
+#: model:ir.model.fields,field_description:shoes.field_shoes_shoe__model_type_ids
+#: model:ir.ui.menu,name:shoes.menu_shoes_model_type
+#, python-format
+msgid "Model Types"
+msgstr ""
+
+#. module: shoes
+#: model_terms:ir.ui.view,arch_db:shoes.shoes_model_type_tree
+msgid "Model Types list"
 msgstr ""
 
 #. module: shoes
@@ -313,6 +346,13 @@ msgid "Statuses list"
 msgstr ""
 
 #. module: shoes
+#: code:addons/shoes/models/shoes_model_type.py:0
+#: model:ir.model.fields,field_description:shoes.field_shoes_model_type__name
+#, python-format
+msgid "Type"
+msgstr ""
+
+#. module: shoes
 #: model:ir.model.fields,field_description:shoes.field_shoes_shoe__message_unread
 msgid "Unread Messages"
 msgstr ""
@@ -330,6 +370,11 @@ msgstr ""
 #. module: shoes
 #: model:ir.model,name:shoes.model_shoes_model
 msgid "shoes.model"
+msgstr ""
+
+#. module: shoes
+#: model:ir.model,name:shoes.model_shoes_model_type
+msgid "shoes.model.type"
 msgstr ""
 
 #. module: shoes

@@ -12,6 +12,7 @@
         'views/shoes_shoe.xml',
         'views/shoes_brand.xml',
         'views/shoes_model.xml',
+        'views/shoes_model_type.xml',
         'views/shoes_size.xml',
         'views/shoes_place.xml',
         'views/shoes_status.xml',

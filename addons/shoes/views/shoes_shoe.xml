@@ -9,7 +9,9 @@
                 <sheet>
                     <group>
                         <field name="size_ids" widget="many2many_tags"/>
+                        <field name="length"/>
                         <field name="model_ids" widget="many2many_tags"/>
+                        <field name="model_type_ids" widget="many2many_tags"/>
                         <field name="brand_id"/>
                         <field name="place_id"/>
                     </group>
@@ -40,7 +42,9 @@
         <field name="arch" type="xml">
             <tree string="Shoes list">
                 <field name="size_ids" widget="many2many_tags"/>
+                <field name="length"/>
                 <field name="model_ids" widget="many2many_tags"/>
+                <field name="model_type_ids" widget="many2many_tags"/>
                 <field name="brand_id"/>
                 <field name="place_id"/>
                 <field name="status_id"/>
